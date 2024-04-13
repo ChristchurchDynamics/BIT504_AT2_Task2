@@ -22,7 +22,6 @@ public class Board {
 		}
 	}
 	
-
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
 	public boolean isDraw() {
 		// Check whether the game has ended in a draw. 
