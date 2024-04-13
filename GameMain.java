@@ -34,7 +34,6 @@ public class GameMain extends JPanel implements MouseListener{
 	// Declare currentState variable as an instance of GameState
 	private GameState currentState; 
 	
-	
 	// the current player
 	private Player currentPlayer; 
 	// for displaying game status message
@@ -100,16 +99,14 @@ public class GameMain extends JPanel implements MouseListener{
 		if (currentState == GameState.Playing) {          
 			statusBar.setForeground(Color.BLACK);          
 			if (currentPlayer == Player.Cross) {   
-			
-				//TODO: use the status bar to display the message "X"'s Turn
-
-				
-			} else {    
-				
-				//TODO: use the status bar to display the message "O"'s Turn
-
-				
-			}       
+				//Use the status bar to display the message "X"'s Turn
+				statusBar.setForeground(Color.RED);          
+				statusBar.setText("It's X's turn");
+				} else {    
+					//Use the status bar to display the message "O"'s Turn
+				statusBar.setForeground(Color.RED);          
+				statusBar.setText("It's O's turn");
+				}       
 			} else if (currentState == GameState.Draw) {          
 				statusBar.setForeground(Color.RED);          
 				statusBar.setText("It's a Draw! Click to play again.");       
@@ -131,8 +128,11 @@ public class GameMain extends JPanel implements MouseListener{
 					board.cells[row][col].content = Player.Empty;           
 				}
 			}
-			 currentState = GameState.Playing;
-			 currentPlayer = Player.Cross;
+			 
+			// initialise the game state
+			currentState = GameState.Playing;
+			// initialise the current player
+			currentPlayer = Player.Cross;
 		}
 		
 		
